@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "&/*": ["./src/include/&organisms/*"],
+      "^/*": ["./src/include/^molecules/*"],
+      "@/*": ["./src/include/@atoms/*"],
+			"~/*": ["./src/*"],
+    }
+  },
+  "exclude": ["node_modules", "dist"]
+}

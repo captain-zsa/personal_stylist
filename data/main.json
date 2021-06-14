@@ -1,0 +1,9 @@
+{
+	"hero": {
+		"title": "HERO title",
+		"text": "HERO text",
+		"icon": {
+			"name": "24/eye"
+		}
+	}
+}

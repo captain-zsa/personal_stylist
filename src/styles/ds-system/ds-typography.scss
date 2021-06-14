@@ -1,0 +1,59 @@
+$ff-raleway: "Raleway", Arial, sans-serif;
+
+@mixin typography_template($font-size, $line-height: 1.5, $font-weight: 400) {
+    font-size: $font-size;
+    font-weight: $font-weight;
+    line-height: $line-height;
+}
+
+@mixin sb-s50 {
+    @include typography_template(22px, 1.5, 600);
+}
+
+@mixin r-s50 {
+    @include typography_template(50px);
+}
+
+@mixin b-s48-h60 {
+    @include typography_template(48px, 60px, 700);
+}
+
+@mixin sb-s48 {
+    @include typography_template(48px, 1.5, 600);
+}
+
+@mixin sb-s36-h42 {
+    @include typography_template(36px, 42px, 600);
+}
+
+@mixin r-s28-h33 {
+    @include typography_template(28px, 33px);
+}
+
+@mixin b-s24-h30 {
+    @include typography_template(24px, 30px, 700);
+}
+
+@mixin b-s22-h27 {
+    @include typography_template(22px, 27px, 700);
+}
+
+@mixin r-s22 {
+    @include typography_template(22px);
+}
+
+@mixin r-s22-h26 {
+    @include typography_template(22px, 26px);
+}
+
+@mixin r-s20-h23 {
+    @include typography_template(20px, 23px);
+}
+
+@mixin b-s18-h22 {
+    @include typography_template(18px, 22px, 700);
+}
+
+@mixin r-s14 {
+    @include typography_template(14px);
+}

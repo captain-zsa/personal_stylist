@@ -1,0 +1,10 @@
+{% macro srcset(srcset) %}
+    {% for item in srcset %}
+        {{ item.src }}
+        {% if item.scale and item.scale > 1 %}
+            {{ item.scale }}x
+        {% endif %}
+
+        {% if loop.index < srcset.length %}, {% endif %}
+    {% endfor %}
+{% endmacro %}

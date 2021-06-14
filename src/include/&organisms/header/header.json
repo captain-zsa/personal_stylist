@@ -1,0 +1,24 @@
+{
+    "header": [
+        {
+            "text" : "Обо мне",
+            "url"  : "#about"
+        },
+        {
+            "text" : "Услуги",
+            "url"  : "#services"
+        },
+        {
+            "text" : "До-После",
+            "url"  : "#before-after"
+        },
+        {
+            "text" : "Отзывы",
+            "url"  : "#reviews"
+        },
+        {
+            "text" : "Контакты",
+            "url"  : "#contacts"
+        }
+    ]
+}

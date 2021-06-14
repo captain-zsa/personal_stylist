@@ -1,0 +1,14 @@
+{
+    "src": "./img/pattern_test.jpg",
+    "srcset": [
+        {
+            "scale": "2",
+            "src": "./img/pattern_test.jpg"
+        },
+        {
+            "scale": "3",
+            "src": "./img/pattern_test.jpg"
+        }
+    ],
+    "alt": "image alt"
+}

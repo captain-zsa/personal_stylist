@@ -1,0 +1,41 @@
+{% import "mixins::image.twig" as image %}
+
+{% set class = class ~ " " ~ "image" %}
+{% set class = class ~ " " ~ (disableLazy == true ? "" : (swiperLazy == true ? "swiper-lazy" : "is-lazy")) %}
+
+{% set alt = alt ?: caption ?: "image" %}
+
+{% if type == "bg" %}
+    <div
+        class="{{ class }}"
+        role="img"
+        aria-label="{{ alt }}"
+
+        {% if disableLazy %}
+            style="background-image: url('{{ src }}')"
+        {% else %}
+            data-background="{{ src }}"
+        {% endif %}
+
+        {{ attr }}
+    >
+    </div>
+{% else %}
+    <img
+        class="{{ class }}"
+        alt="{{ alt }}"
+        {% if title %} title="{{ title }}"{% endif %}
+
+        {% if disableLazy %}
+            src="{{ src }}"
+            {% if srcset %} srcset="{{ image.srcset(srcset) }}" {% endif %}
+        {% else %}
+            src="{{ placeholder }}"
+            data-src="{{ src }}"
+            {% if srcset %} data-srcset="{{ image.srcset(srcset) }}"{% endif %}
+        {% endif %}
+
+        {{ attr }}
+    >
+{% endif %}
+

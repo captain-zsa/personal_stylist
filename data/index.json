@@ -1,0 +1,41 @@
+{
+  "project_name": "Boilerplate",
+  "page_list": {
+    "Публичные страницы": [
+			{
+				"href": "main",
+				"name": "Главная страница",
+				"ready": true
+			},
+      {
+        "href": "404",
+				"name": "404",
+				"ready": true
+			},
+			{
+        "href": "about",
+				"name": "О компании (не готовая)",
+				"ready": false
+      }
+    ],
+    "Внутренние страницы": [],
+    "Личный кабинет": [],
+    "Служебное": [
+			{
+        "href": "atoms",
+				"name": "Атомы",
+				"ready": true
+			},
+			{
+        "href": "molecules",
+				"name": "Молекулы",
+				"ready": true
+      },
+      {
+        "href": "organisms",
+				"name": "Организмы",
+				"ready": true
+      }
+    ]
+  }
+}

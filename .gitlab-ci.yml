@@ -1,0 +1,43 @@
+stages:
+  - build
+  - deploy
+
+build html:
+  stage: build
+  script:
+    - nvm install 10
+    - nvm use 10
+    - yarn
+    - yarn global add gulp-cli
+    - yarn run build
+  only:
+    - master
+
+deploy html:
+  stage: deploy
+  variables:
+    GIT_STRATEGY: none
+  script:
+    - scp -r $CI_PROJECT_DIR/dist/* $DEV_SSH_USER@$DEV_SSH_HOST:$DEV_PROJECT_HOME_DIR
+  only:
+    - master
+
+build html dev:
+  stage: build
+  script:
+    - nvm install 10
+    - nvm use 10
+    - yarn
+    - yarn global add gulp-cli
+    - yarn run build
+  only:
+    - dev
+
+deploy html dev:
+  stage: deploy
+  variables:
+    GIT_STRATEGY: none
+  script:
+    - scp -r $CI_PROJECT_DIR/dist/* $TEST_SSH_USER@$DEV_SSH_HOST:$TEST_PROJECT_HOME_DIR
+  only:
+    - dev

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>{{ project_name }} HTML</title>
+
+		{# Icons #}
+		{# Generated on https://realfavicongenerator.net/ #}
+		<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+		<link rel="manifest" href="./site.webmanifest">
+		<link rel="mask-icon" href="./safari-pinned-tab.svg" color="#bd1212">
+		<meta name="msapplication-TileColor" content="#603cba">
+		<meta name="theme-color" content="#ffffff">
+
+		{# Убирает автоматическое обнаружение телефонов и превращение в тэг a:tel #}
+		{# Случай в safari #}
+		<meta name="format-detection" content="telephone=no">
+	</head>
+
+	<body>
+		<div class="head-line">
+			<h1>{{ project_name }} HTML 👨‍💻</h1>
+		</div>
+
+		<div class="wrap">
+			{# Список страниц: /data/index.json #}
+			{% for key, pages in page_list %}
+				<h2>{{ key }}</h2>
+				<ol class="box">
+					{% for page in pages %}
+						<li>
+							<a href="{{ page.href }}.html" class="{{ page.ready ?: 'not-ready' }}">
+								{{ page.name }}
+							</a>
+						</li>
+					{% endfor %}
+				</ol>
+			{% endfor %}
+		</div>
+
+		<style>
+			body {
+				font-family: Roboto, Helvetica, Arial, sans-serif;
+				font-size: 16px;
+				background-color: #fafafa;
+				color: #212121;
+				margin: 0;
+			}
+
+			.head-line {
+				background-color: #212121;
+				box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
+			}
+
+			.head-line h1 {
+				margin: 0 auto;
+				padding: 20px 10px;
+				max-width: 1280px;
+				min-height: 68px;
+				box-sizing: border-box;
+				color: #fff;
+				font-size: 24px;
+				font-weight: 300;
+				word-wrap: break-word;
+			}
+
+			.wrap {
+				padding: 0 10px 10px;
+				text-align: center;
+				overflow: hidden;
+			}
+
+			h2 {
+				text-align: center;
+				position: relative;
+				display: inline-block;
+				max-width: 1280px;
+				margin: 30px 0 10px;
+				padding: 0 20px;
+				background-color: #fafafa;
+				font-weight: 400;
+			}
+
+			h2:before {
+				content: '';
+				position: absolute;
+				height: 1px;
+				width: 1280px;
+				background-color: #eaeaea;
+				top: 50%;
+				left: 50%;
+				-webkit-transform: translateX(-50%);
+				transform: translateX(-50%);
+				z-index: -1;
+			}
+
+			a {
+				color: #212121;
+				text-decoration: none;
+			}
+
+			a.not-ready {
+				opacity: .5;
+			}
+
+			a:hover {
+				color: #212121;
+				text-decoration: underline;
+			}
+
+			.box {
+				padding: 20px 40px;
+				margin: 20px auto 0;
+				width: 100%;
+				max-width: 1280px;
+				border-radius: 8px;
+				box-sizing: border-box;
+				border: 1px solid #eaeaea;
+				background-color: #fff;
+				text-align: left;
+				-webkit-columns: 210px auto;
+				columns: 210px auto;
+				-webkit-column-gap: 50px;
+				column-gap: 50px;
+				-webkit-column-rule: 1px solid #f2f2f2;
+				column-rule: 1px solid #f2f2f2;
+			}
+
+			ol, ul {
+				list-style-type: none;
+			}
+
+			li {
+				word-wrap: break-word;
+				display: inline-block;
+				box-sizing: border-box;
+				width: 100%;
+				padding: 10px 15px 10px 40px;
+				position: relative;
+			}
+
+			li a:before {
+				position: absolute;
+				display: inline-block;
+			}
+
+			ol {
+				counter-reset: item;
+			}
+
+			ol li {
+				counter-increment: item;
+			}
+
+			ol li a:before {
+				content: counter(item, decimal-leading-zero) ".";
+				top: 13px;
+				left: 0;
+				color: #64b5f6;
+				font-size: 12px;
+				font-weight: 500;
+				z-index: 10;
+			}
+
+			ol li a:visited:before {
+				color: #ba68c8;
+			}
+
+			ul li a:before {
+				content: '';
+				top: 18px;
+				left: 8px;
+				width: 6px;
+				height: 6px;
+				border-radius: 50%;
+				background-color: #64b5f6;
+			}
+
+			ul li a:visited:before {
+				background-color: #ba68c8;
+			}
+		</style>
+	</body>
+</html>

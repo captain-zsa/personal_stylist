@@ -1,0 +1,34 @@
+{
+	"src": "tmp/banner-bg/sale20.jpg",
+	"srcset": [
+		{
+			"scale": "2",
+			"src": "tmp/banner-bg/sale20@2x.jpg"
+		}
+	],
+	"alt": "Роборука",
+	"sm": {
+		"srcset": [
+			{
+				"scale": "1",
+				"src": "tmp/banner-bg/sale20-mob.jpg"
+			},
+			{
+				"scale": "2",
+				"src": "tmp/banner-bg/sale20-mob@2x.png"
+			}
+		]
+	},
+	"md": {
+		"srcset": [
+			{
+				"scale": "1",
+				"src": "./img/pattern_test.jpg"
+			},
+			{
+				"scale": "2",
+				"src": "./img/pattern_test.jpg"
+			}
+		]
+	}
+}

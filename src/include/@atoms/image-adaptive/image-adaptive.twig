@@ -1,0 +1,22 @@
+{% import "mixins::image.twig" as image %}
+
+{# map - массив breakpoint #}
+{% set map = [] %}
+{% set map = sm ? map|merge([{ point: "md", data: sm }]) : map %}
+{% set map = md ? map|merge([{ point: "lg", data: md }]) : map %}
+{% set map = lg ? map|merge([{ point: "xl", data: lg }]) : map %}
+
+<picture>
+    {% for item in map %}
+        <source
+            media="(max-width: {{ breakpoints[item.point] - 1 }}px)"
+            {% if disableLazy %}
+                srcset="{{ image.srcset(item.data.srcset) }}"
+            {% else %}
+                data-srcset="{{ image.srcset(item.data.srcset) }}"
+            {% endif %}
+        >
+    {% endfor %}
+
+    {% view "@image" with _self %}
+</picture>

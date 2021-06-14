@@ -1,0 +1,38 @@
+.header {
+    background-color: $white;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05);
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        position: relative;
+        width: 215px;
+        height: 86px;
+
+        svg {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
+
+    &__list {
+        @include clear-list;
+
+        display: flex;
+    }
+
+    &__link {
+        @include r-s22-h26;
+
+        font-family: $ff-raleway;
+        display: block;
+        color: $blue-400;
+        padding: 30px 20px;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+}

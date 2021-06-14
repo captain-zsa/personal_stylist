@@ -1,0 +1,26 @@
+{% if href %}
+	{# Ссылка #}
+	<a href="{{ href }}" {% if external %}target="_blank"{% endif %}{% if class %} class="{{ class }}"{% endif %} {{ attr ?: '' }}>
+		{% block content %}{% endblock %}
+	</a>
+
+{% elseif pillow == 'button' %}
+	{# Если подушка - кнопка #}
+	<button type="{{ type ?: 'button' }}"{% if class %} class="{{ class }}"{% endif %} {{ attr ?: '' }}>
+		{% block content %}{% endblock %}
+	</button>
+
+{% elseif pillow %}
+	{# Если присутствует подушка #}
+	{% set tagStart = '<' ~ pillow %}
+	{% set tagEnd = '</' ~ pillow ~ '>' %}
+	{{ tagStart }} {% if class %} class="{{ class }}"{% endif %} {{ attr ?: '' }}>
+		{% block content %}{% endblock %}
+	{{ tagEnd }}
+
+{% else %}
+	{# Тэг спан на крайний случай #}
+	<span {% if class %} class="{{ class }}"{% endif %} {{ attr ?: '' }}>
+		{% block content %}{% endblock %}
+	</span>
+{% endif %}
